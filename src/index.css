@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .poster{
-    box-shadow: 10px 10px 100px 100px black inset;
+    box-shadow: 10px 10px 100px 100px #082F49 inset;
+}
+
+.description-shadow{
+    box-shadow: 0px 10px 100px 100px #082F49 inset;
 }
