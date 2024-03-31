@@ -5,6 +5,8 @@ export type movieType = {
     overview: string,
     poster_path: string,
     adult: boolean,
+    runtime: number,
+    genres: {id: number, name: string}[]
 }
 
 export type chairType = {
