@@ -11,6 +11,15 @@ export default {
 
         // Complex site-specific column configuration
         'footer': '200px minmax(900px, 1fr) 100px',
+      },
+      backgroundImage: {
+        'ticket': "url('/ticket.png')",
+      },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        'full': '100%',
       }
     },
   },

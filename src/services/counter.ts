@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { chairType } from '../model/movie'
 
 export const counterSlice = createSlice({
     name: 'counter',
@@ -6,11 +7,12 @@ export const counterSlice = createSlice({
         value: [],
     },
     reducers: {
-        increment: (state: any, id) => {
-            state.value = [...state.value, id]
+        increment: (state: any, item) => {
+            console.log(item)
+            state.value = [...state.value, item.payload]
         },
         decrement: (state: any, item) => {
-            state.value = state.value.filter((value: any) => value != item.payload )
+            state.value = state.value.filter((value: chairType) => value.id != item.payload.id )
         }
     },
 })
