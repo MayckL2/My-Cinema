@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { allMovies } from "../services/api";
-import Carousel from "./carousel";
+import Carousel from "../components/carousel";
 import { movieType } from "../model/movie";
-import { Button, Skeleton } from "@mui/material";
+import { Skeleton } from "@mui/material";
 import { BsFillCameraReelsFill } from "react-icons/bs";
-import Carousel2 from "./carousel2";
+import Carousel2 from "../components/carousel2";
 
-export default function Main() {
+export default function Home() {
     const [movies, setMovies] = useState<{
         carousel: movieType[],
         now_playing: movieType[]

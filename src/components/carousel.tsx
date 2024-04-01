@@ -46,7 +46,7 @@ export default function Carousel(props: { movies: movieType[] }) {
         {props.movies.map((value: movieType, key: number) => {
             return <div key={key} className="relative w-full h-96">
                 <span className="poster absolute w-full h-full z-10"></span>
-                <img className="opacity-70 h-96 w-full" src={urlImages + value.backdrop_path} alt={value.title} />
+                <img className="opacity-70 h-96 w-full object-cover" src={urlImages + value.backdrop_path} alt={value.title} />
                 <div className="absolute bottom-4 sm:left-8 z-20 flex flex-col gap-4 justify-center w-full sm:w-1/2">
                     <p className=" font-bold capitalize text-4xl">{value.title}</p>
                     <span className="text-xl font-bold w-[98%] h-20 overflow-hidden">{value.overview}</span>

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -11,12 +10,12 @@ import { Provider } from 'react-redux'
 import { ApolloProvider } from '@apollo/client';
 import { client } from './services/apollo.ts';
 import BuyTicket from './pages/buyTicket.tsx';
-import Main from './components/main.tsx';
+import Home from './pages/home.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <Home />,
   },
   {
     path: '/buyTicket/:movie',

@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import { movieDetail, urlImages } from "../services/api"
 import { useEffect, useState } from "react"
 import { chairType, movieRoom, movieType } from "../model/movie"
-import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent, Checkbox, Chip } from "@mui/material"
+// import { SelectChangeEvent } from "@mui/material"
 import { FaWheelchair } from "react-icons/fa";
 import { MdChair } from "react-icons/md";
 import { GiStoneThrone } from "react-icons/gi";
@@ -14,14 +14,15 @@ import { FaArrowRightToBracket } from "react-icons/fa6";
 export default function BuyTicket() {
     const { movie } = useParams()
     const [data, setData] = useState<movieType>()
-    const [age, setAge] = useState('');
+    // const [age, setAge] = useState('');
     const [chairs, setChairs] = useState<chairType[]>()
     const count = useSelector((state: any) => state.counter.value)
+    const total = useSelector((state: any) => state.counter.total)
     const dispatch = useDispatch()
 
-    const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value as string);
-    };
+    // const handleChange = (event: SelectChangeEvent) => {
+        // setAge(event.target.value as string);
+    // };
 
     async function loadDetails() {
         if (movie) {
@@ -171,6 +172,12 @@ export default function BuyTicket() {
                     {count.map((value: chairType, key: number) => {
                         return <Ticket key={key} chair={value} />
                     })}
+
+                    <hr className="my-2"></hr>
+
+                    <div className="flex justify-end px-2">
+                        <p className="font-bold">R${total.toFixed(2)}</p>
+                    </div>
                     {/* <p>nao sei oque, nao sei oque</p> */}
                 </div>
             </aside>
